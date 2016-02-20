@@ -8,9 +8,12 @@
 #  challenge_id :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
+#  language     :string
 #
 
 class Submit < ActiveRecord::Base
   has_many :code_results
   belongs_to :challenge
+
+  enum status: [:pending, :evaluating, :passed, :not_passed, :timeout, :error]
 end
