@@ -16,6 +16,7 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #  auth_token             :string           default("")
+#  role                   :integer          default(0)
 #
 
 class User < ActiveRecord::Base
@@ -24,9 +25,12 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :challenges
+  has_many :challenges, dependent: :destroy
 
   validates :auth_token, uniqueness: true
+  validates :role, presence: true
+
+  enum role: [:user, :worker]
 
   before_create :generate_authentication_token!
   

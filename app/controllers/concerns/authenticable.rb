@@ -10,6 +10,11 @@ module Authenticable
                 status: :unauthorized unless current_user.present?
   end
 
+  def authenticate_as_worker!
+    render json: { errors: "Not authenticated" },
+                status: :unauthorized unless current_user.present? && current_user.worker?
+  end
+
   def user_signed_in?
     current_user.present?
   end
