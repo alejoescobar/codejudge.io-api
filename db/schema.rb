@@ -11,10 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160220183130) do
+ActiveRecord::Schema.define(version: 20160220201315) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "challenges", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "challenges", ["user_id"], name: "index_challenges_on_user_id", using: :btree
+
+  create_table "code_results", force: :cascade do |t|
+    t.text     "actual_output"
+    t.text     "expected_output"
+    t.integer  "passed"
+    t.boolean  "has_errors"
+    t.integer  "submit_id"
+    t.integer  "test_case_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  add_index "code_results", ["submit_id"], name: "index_code_results_on_submit_id", using: :btree
+  add_index "code_results", ["test_case_id"], name: "index_code_results_on_test_case_id", using: :btree
+
+  create_table "submits", force: :cascade do |t|
+    t.text     "code"
+    t.integer  "status"
+    t.integer  "challenge_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "submits", ["challenge_id"], name: "index_submits_on_challenge_id", using: :btree
+
+  create_table "test_cases", force: :cascade do |t|
+    t.text     "input"
+    t.text     "output"
+    t.integer  "challenge_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "test_cases", ["challenge_id"], name: "index_test_cases_on_challenge_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -36,4 +79,9 @@ ActiveRecord::Schema.define(version: 20160220183130) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
+  add_foreign_key "challenges", "users"
+  add_foreign_key "code_results", "submits"
+  add_foreign_key "code_results", "test_cases"
+  add_foreign_key "submits", "challenges"
+  add_foreign_key "test_cases", "challenges"
 end
