@@ -13,4 +13,6 @@ class Challenge < ActiveRecord::Base
   has_many :test_cases
   has_many :submits
   belongs_to :user
+
+  validates :name, :user_id, presence: true
 end
