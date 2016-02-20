@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :challenges
+  has_many :challenges, dependent: :destroy
 
   validates :auth_token, uniqueness: true
   validates :role, presence: true

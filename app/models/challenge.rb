@@ -10,8 +10,8 @@
 #
 
 class Challenge < ActiveRecord::Base
-  has_many :test_cases
-  has_many :submits
+  has_many :test_cases, dependent: :destroy
+  has_many :submits, dependent: :destroy
   belongs_to :user
 
   validates :name, :user_id, presence: true
