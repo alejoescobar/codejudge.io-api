@@ -15,7 +15,7 @@ class Submit < ActiveRecord::Base
   has_many :code_results
   belongs_to :challenge
 
-  validate :code, :status, :challenge_id, :language, presence: true
+  validates :code, :status, :challenge_id, :language, presence: true
 
   enum status: [:pending, :evaluating, :passed, :not_passed, :timeout, :error]
 end
