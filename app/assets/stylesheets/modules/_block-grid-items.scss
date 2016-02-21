@@ -1,0 +1,13 @@
+.block-grid-item{
+  @media screen and (max-width: $screen-md) {
+    width: 100% !important;
+  }
+  padding: 5px;
+  .card-block{
+    padding: 0;
+    .right-list-content{
+      background: none;
+      color: #3F3F3F;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+// challenges/index view SCSS
+@import "variables-bootstrap-custom";
+
+section.challenges-show{
+  h2 {
+    a {
+      font-size: 20px;
+    }
+  }
+
+  th {
+    text-align: center;
+  }
+  td{
+    text-align: center;
+  }
+  .answer-count, .submitter-id {
+  font-size: 12px !important;
+    line-height: 18px;
+    color: $gray-light;
+  }
+  .actual-output{
+    border-left: 1px solid #EEE;
+    span{
+      // border: 1px solid #EEEEEE;
+      padding: 3px 5px;
+      color: white;
+      background: #333;
+      border-radius:3px;
+      font-size: 12px !important;
+      line-height: 18px;
+    }
+  }
+
+}
