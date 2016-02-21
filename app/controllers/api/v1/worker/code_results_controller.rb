@@ -12,7 +12,7 @@ class Api::V1::Worker::CodeResultsController < ApplicationController
     elsif params[:evaluator_status] == "timeout"
       code_result.status = :code_timeout
     else
-      code_result.status = :error
+      code_result.status = :wrong
       code_result.code_errors = params[:error]
     end
     if code_result.save
