@@ -4,13 +4,13 @@
     <div class="container">
       <div class="row">
         <ol class="breadcrumb">
-          <li><a href="#">My challenges</a></li>
-          <li class="active">Add numbers</li>
+          <li><%= link_to 'My challenges' ,challenges_path %></li>
+          <li class="active"><%= @challenge.name %></li>
         </ol>
       </div>
       <div class="row">
-        <h2>Add numbers <a href=""><i class="glyphicon glyphicon-remove-circle"></i></a></h2>
-        <p><strong>Challenge ID</strong> 2352-AG23</p>
+        <h2><%= @challenge.name %> <a href=""><i class="glyphicon glyphicon-remove-circle"></i></a></h2>
+        <p><strong>Challenge ID</strong> <%= @challenge.uid %></p>
       </div>
     </div>
   </div>
@@ -30,7 +30,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <!-- <tr>
                   <th scope="row">1</th>
                   <td>1 3</td>
                   <td>4</td>
@@ -47,7 +47,7 @@
                   <td>55 4</td>
                   <td>220</td>
                   <td><a href=""><i class="glyphicon glyphicon-remove-circle"></i></a></td>
-                </tr>
+                </tr> -->
               </tbody>
             </table>
 
@@ -60,7 +60,6 @@
       <div class="col-lg-8">
         <div class="panel panel-default">
           <div class="panel-heading">Recieved solutions</div>
-
             <table class="table table-striped">
               <thead>
                 <tr>
@@ -72,7 +71,7 @@
                 </tr>
               </thead>
               <tbody>
-                <tr>
+               <!--  <tr>
                   <th scope="row">1</th>
                   <td class="submitter-id">3463-ADAG1</td>
                   <td class="answer-count">14/22</td>
@@ -114,7 +113,7 @@
                   <td><a href="">view</a></td>
                   <td><span class="label label-danger">timeout</span></td>
                 </tr>
-                <tr>
+                <tr> -->
                 </tbody>
               </table>
 
