@@ -16,19 +16,16 @@
       <h2>Create a new challenge</h2>
       <hr>
         <%= form_for @challenge, html: {class: "nifty_form"} do |f| %>
-
         <div class="form-group">
-            <%#= label_tag(:name, "Name") %>
             <%= f.text_field :name, class: "form-control" ,placeholder: "Name of the challenge" %>
         </div>
 
          <%=  f.nested_fields_for :test_cases do |ff| %>
+
            <div class="form-group">
-              <%#= ff.label(:input, "Input") %>
               <p><strong>Test case:</strong></p><%= ff.remove_nested_fields_link '<i class="glyphicon glyphicon-remove-circle"></i>'.html_safe %>
               <%= ff.text_field :input, class: "form-control" ,placeholder: "input" %>
               <%= ff.text_field :output, class: "form-control" ,placeholder: "output" %>
-
             </div>
           <% end %>
 

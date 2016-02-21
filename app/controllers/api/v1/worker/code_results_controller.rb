@@ -1,4 +1,4 @@
-class Api::V1::Worker::CodeResultsController < ApplicationController
+class Api::V1::Worker::CodeResultsController < Api::V1::ApiController
   before_action :authenticate_with_token!, only: [:show]
   before_action :authenticate_as_worker!, only: [:create]
   respond_to :json
