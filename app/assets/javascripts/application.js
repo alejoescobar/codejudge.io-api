@@ -16,4 +16,5 @@
 //= require turbolinks
 //= require prism
 //= require nested_form_fields
+//= require smoothscroll
 //= require_tree .

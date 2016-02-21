@@ -28,6 +28,7 @@ class ChallengesController < ApplicationController
   end
   def show
     @challenge = Challenge.find(params[:id])
+    @test_case = TestCase.new
   end
   def edit
     @challenge = Challenge.find(params[:id])

@@ -1,0 +1,41 @@
+.home{
+.hero-unit {
+    padding: 10em 0 6em 0;
+    background-image:url('http://franklincode.coursekit.com.s3.amazonaws.com/30e1ceef65aa4ba1a1bb66056eeb09b6/sass/img/onboarding-bg.jpg');
+    background-size:cover;
+    background-color: #EEEEEE;
+    // height:300px;
+    color: white;
+    .logo{
+        max-width: 320px;
+    }
+    .btn{
+        background: none !important;
+        border: #fff solid 2px;
+        color:#fff;
+        margin-top: 15px;
+        padding: 15px 30px;
+    }
+    h1{
+        font-size: 32px;
+    }
+
+  }
+  #services{
+    padding: 4em 0;
+  }
+
+.fill{width:100%;height:350px;background-position:center;background-size:cover;}
+}
+    // /* Large desktop */
+    // @media (min-width: 1200px) { ... }
+
+    // /* Portrait tablet to landscape and desktop */
+    // @media (min-width: 768px) and (max-width: 979px) { ... }
+
+    // /* Landscape phone to portrait tablet */
+    // @media (max-width: 767px) { ... }
+
+    // /* Landscape phones and down */
+    // @media (max-width: 480px) { ... }
+

@@ -1,0 +1,46 @@
+<div class="home">
+<div class="hero-unit">
+  <div class="container text-center">
+    <%= image_tag 'logo-white-welcome', class: 'logo' %>
+    <h1>the simples way to test your code</h1>
+    <p><%= link_to 'I want to test my CODE!',  new_user_registration_path, class: 'btn' %></p>
+  </div>
+</div>
+<section id="services">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2 class="section-heading">Services</h2>
+        <h3 class="section-subheading text-muted">Simple code testing, with love</h3>
+      </div>
+    </div>
+    <div class="row text-center">
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <i class="fa fa-cloud-upload fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading">Evaluator</h4>
+        <p class="text-muted">Send us the code  you want to <strong>evaluate</strong> trough our simple API and recieve if it passed the tests you design. </p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <i class="fa fa-coffee fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading">Queue system</h4>
+        <p class="text-muted">Our ultra cool queue system allow us to receive a gazillion requests without blowing up anything on our servers, so test away ;)</p>
+      </div>
+      <div class="col-md-4">
+        <span class="fa-stack fa-4x">
+          <i class="fa fa-circle fa-stack-2x text-primary"></i>
+          <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
+        </span>
+        <h4 class="service-heading">Web Security</h4>
+        <p class="text-muted">Using standard API token system allow our clients to send all the request needed without worrying about any security issues</p>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<style> .clear-nav{margin:0;}</style>
