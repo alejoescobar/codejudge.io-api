@@ -20,7 +20,7 @@ class Submit < ActiveRecord::Base
   enum status: [:pending, :evaluating, :passed, :not_passed, :timeout, :error]
 
   def evaluate!
-    api_endpoint = ENV['API_ENPOINT'] || 'http://codejudge.io/api'
+    api_endpoint = ENV['API_ENPOINT'] || 'http://codejudge.io'
     submit_url = URI.join(api_endpoint,Rails.application.routes.url_helpers.api_worker_challenge_submit_path(self.challenge.id,self.id))
     result_url = URI.join(api_endpoint,Rails.application.routes.url_helpers.api_worker_challenge_submit_code_results_path(self.challenge.id,self.id))
     evaluator_url = URI.join(api_endpoint,Rails.application.routes.url_helpers.api_worker_evaluators_path)

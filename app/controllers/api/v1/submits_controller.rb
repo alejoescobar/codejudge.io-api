@@ -9,7 +9,7 @@ class Api::V1::SubmitsController < ApplicationController
       CodeEvaluatorJob.perform_later(submit)
       head :created
     else
-      render {errors: submit.errors}, status: :bad_request
+      render json: {errors: submit.errors}, status: :bad_request
     end
   end
 
