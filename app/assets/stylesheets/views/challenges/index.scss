@@ -2,23 +2,5 @@
 @import "variables-bootstrap-custom";
 
 section.challenges-index{
-	.caption{
-		h3{
-			margin-top: 0.75rem;
-		}
-	}
-	.block-grid-item{
-    @media screen and (max-width: $screen-md) {
-      width: 100% !important;
-    }
-    padding: 0 5px;
-    .card-block{
-			// border: 1px solid #E9E9E9;
-			padding: 0 15px 15px 15px;
-			.right-list-content{
-				background: none;
-				color: #3F3F3F;
-			}
-		}
-	}
+
 }
