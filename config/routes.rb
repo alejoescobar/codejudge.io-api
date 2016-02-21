@@ -10,15 +10,17 @@ Rails.application.routes.draw do
       resources :sessions, :only => [:create, :destroy]
 
       namespace :worker do
-        resources :challenges, :only => [:show] do 
+        resources :challenges, :only => [:show] do
           resources :submits, :only => [:show] do
             resources :code_results, :only => [:show, :create]
           end
         end
+        resource :evaluators, :only => [:show]
       end
     end
   end
   devise_for :users
   resources :challenges
   root 'challenges#index'
+
 end

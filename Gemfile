@@ -56,3 +56,4 @@ group :development do
 
 end
 
+gem 'docker-api'
