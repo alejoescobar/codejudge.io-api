@@ -24,7 +24,7 @@ class Submit < ActiveRecord::Base
     submit_url = URI.join(api_endpoint,Rails.application.routes.url_helpers.api_worker_challenge_submit_path(self.challenge.id,self.id))
     result_url = URI.join(api_endpoint,Rails.application.routes.url_helpers.api_worker_challenge_submit_code_results_path(self.challenge.id,self.id))
     evaluator_url = URI.join(api_endpoint,Rails.application.routes.url_helpers.api_worker_evaluators_path)
-    auth_token = self.challenge.user.auth_token
+    auth_token = ENV['WORKER_AUTH_TOKEN'] || User.worker.first.auth_token
     docker_image = ENV['DOCKER_IMAGE'] || 'codingjudge/evaluator'
 
     command = %Q(docker run -e "GET_SUBMIT_URL=#{submit_url}" -e "POST_CODE_RESULT_URL=#{result_url}" -e "AUTH_TOKEN=#{auth_token}" #{docker_image} bash -lc 'curl -H "Authorization: #{auth_token}" #{evaluator_url} -o e.rb ; ruby e.rb')
