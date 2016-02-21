@@ -8,9 +8,15 @@ Rails.application.routes.draw do
       # We are going to list our resources here
       resources :users, :only => [:show, :create, :update, :destroy]
       resources :sessions, :only => [:create, :destroy]
-      resources :challenges, :only => [:show] do 
-        resources :submits, :only => [:show]
+
+      namespace :worker do
+        resources :challenges, :only => [:show] do 
+          resources :submits, :only => [:show] do
+            resources :code_results, :only => [:create]
+          end
+        end
       end
+
     end
   end
   devise_for :users 
