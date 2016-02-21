@@ -15,9 +15,6 @@ req['Authorization'] = auth_token
 res = http.request(req)
 submit = JSON.parse(res.body)
 
-pp submit["test_cases"]
-
-
 language = submit["language"]
 
 solution_file_name = "solution.#{language}"

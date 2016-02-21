@@ -1,0 +1,1 @@
+def sum(a,b);a*b;end;puts sum(*gets.chomp.split(' ').map(&:to_i));
