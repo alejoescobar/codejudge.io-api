@@ -1,16 +1,14 @@
 @import "../variables-bootstrap-custom";
-section{
-  padding-bottom: 30px;
-}
-.m-t-0 {
-  margin-top: 0 !important;
-}
-.m-b-3 {
-  margin-bottom: 3rem !important;
-  padding-bottom: 10px;
-}
+
+section{ padding-bottom: 30px }
+.m-t-0 { margin-top: 0 !important }
+.m-b-3 { margin-bottom: 3rem !important; padding-bottom: 10px;}
 @media screen and (max-width: $screen-sm) {
   .container{
     padding: 0 35px;
   }
+}
+
+.form-control{
+  margin-bottom: 5px;
 }

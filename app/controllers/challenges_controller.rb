@@ -16,6 +16,7 @@ class ChallengesController < ApplicationController
   end
   def new
     @challenge = Challenge.new
+    @challenge.test_cases.build
   end
   def create
     @challenge = Challenge.new(challenge_params)
@@ -24,6 +25,7 @@ class ChallengesController < ApplicationController
   end
   def show
     @challenge = Challenge.find(params[:id])
+    @challenge.test_cases.build
   end
   def edit
     @challenge = Challenge.find(params[:id])
@@ -43,6 +45,7 @@ class ChallengesController < ApplicationController
   end
   private
   def challenge_params
-    params.require(:challenge).permit(:name)
+    params.require(:challenge).permit(:name,test_cases_attributes:[:input,:output,:_destroy,:id])
+
   end
 end

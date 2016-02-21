@@ -118,6 +118,10 @@ GEM
     minitest (5.8.4)
     multi_json (1.11.2)
     nenv (0.3.0)
+    nested_form_fields (0.7.4)
+      coffee-rails (>= 3.2.1)
+      jquery-rails
+      rails (>= 3.2.0)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     notiffany (0.0.8)
@@ -220,6 +224,7 @@ DEPENDENCIES
   guard-livereload
   jbuilder (~> 2.0)
   jquery-rails
+  nested_form_fields
   pg (~> 0.15)
   rack-cors
   rails (= 4.2.5.1)

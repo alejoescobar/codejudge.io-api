@@ -18,6 +18,7 @@ class Challenge < ActiveRecord::Base
   belongs_to :user
 
   validates :name, :user_id, presence: true
+  accepts_nested_attributes_for :test_cases, allow_destroy: true
 
   protected
     def set_uid
