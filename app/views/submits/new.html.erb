@@ -19,7 +19,7 @@
         <div class="panel panel-default">
           <div class="panel-heading">Code Submission</div>
           <%= form_for [@challenge, @submit] do |f| %>
-            <%= f.text_area :code, size: "48x21" %>
+            <%= f.text_area :code, size: "48x21", placeholder: "i.e. def sum(a,b);a*b;end;puts sum(*gets.chomp.split(' ').map(&:to_i));" %>
         </div>
             <div class="form-group">
               <%= f.label :language, "Programming Language" %>
