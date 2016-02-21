@@ -69,6 +69,7 @@ submit["test_cases"].each_with_index do |test_case,i|
     if status.success?
 
       req = Net::HTTP::Post.new(post_code_result_url)
+      req['Authorization'] = auth_token
       req.body = JSON.generate({
         test_case_id: test_case["id"],
         actual_output: stdout,
@@ -85,6 +86,7 @@ submit["test_cases"].each_with_index do |test_case,i|
     else
 
       req = Net::HTTP::Post.new(post_code_result_url)
+      req['Authorization'] = auth_token
       req.body = JSON.generate({
         test_case_id: test_case["id"],
         actual_output: stdout,
