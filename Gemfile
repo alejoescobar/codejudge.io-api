@@ -61,3 +61,4 @@ group :production do
 end
 gem 'docker-api'
 gem 'puma'
+gem 'sinatra', :require => nil
