@@ -1,6 +1,11 @@
 class Api::V1::Worker::CodeResultsController < ApplicationController
+  before_action :authenticate_with_token!, only: [:show]
   before_action :authenticate_as_worker!, only: [:create]
   respond_to :json
+
+  def show
+    respond_with CodeResult.find(params[:id])
+  end
 
   def create
     code_result = CodeResult.new(code_result_params)
