@@ -11,6 +11,9 @@ Rails.application.routes.draw do
       resources :users, :only => [:show, :create, :update, :destroy]
       resources :sessions, :only => [:create, :destroy]
 
+      resources :challenges, only: [] do
+        resources :submits, only: [:create]
+      end
       namespace :worker do
         resources :challenges, :only => [:show] do
           resources :submits, :only => [:show] do
