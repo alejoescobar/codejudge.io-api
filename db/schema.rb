@@ -88,5 +88,4 @@ ActiveRecord::Schema.define(version: 20160221013443) do
   add_foreign_key "code_results", "test_cases"
   add_foreign_key "submits", "challenges"
   add_foreign_key "test_cases", "challenges"
-
 end
