@@ -1,4 +1,4 @@
-class Api::V1::Worker::SubmitsController < ApplicationController
+class Api::V1::Worker::SubmitsController < Api::V1::ApiController
   before_action :authenticate_as_worker!, only: [:show]
   respond_to :json
 
