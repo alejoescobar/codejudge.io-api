@@ -1,4 +1,4 @@
-class Api::V1::Worker::EvaluatorsController < ApplicationController
+class Api::V1::Worker::EvaluatorsController < Api::V1::ApiController
   before_action :authenticate_as_worker!, only: [:show]
   respond_to :json
 
