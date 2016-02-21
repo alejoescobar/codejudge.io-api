@@ -11,10 +11,12 @@ Rails.application.routes.draw do
 
       namespace :worker do
         resources :challenges, :only => [:show] do 
-          resources :submits, :only => [:show]
+          resources :submits, :only => [:show] do
+            resources :code_results, :only => [:create]
+          end
         end
       end
-      
+
     end
   end
   devise_for :users 
