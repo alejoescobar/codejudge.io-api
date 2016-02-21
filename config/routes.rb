@@ -25,7 +25,9 @@ Rails.application.routes.draw do
     end
   end
   devise_for :users
-  resources :challenges
+  resources :challenges do 
+    resources :submits, only: [:new, :create, :show]
+  end
   resources :test_cases, only: [:destroy]
   root 'challenges#index'
 
