@@ -1,4 +1,4 @@
-class Api::V1::SubmitsController < ApplicationController
+class Api::V1::SubmitsController < Api::V1::ApiController
   before_action :authenticate_with_token!, only: [:create]
   respond_to :json
 
