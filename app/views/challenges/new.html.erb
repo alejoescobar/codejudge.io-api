@@ -17,15 +17,15 @@
       <hr>
         <%= form_for @challenge, html: {class: "nifty_form"} do |f| %>
         <div class="form-group">
-            <%= f.text_field :name, class: "form-control" ,placeholder: "Name of the challenge" %>
+            <%= f.text_field :name, class: "form-control" ,placeholder: "Name of the challenge (i.e. sum)" %>
         </div>
 
          <%=  f.nested_fields_for :test_cases do |ff| %>
 
            <div class="form-group">
               <p><strong>Test case:</strong></p><%= ff.remove_nested_fields_link '<i class="glyphicon glyphicon-remove-circle"></i>'.html_safe %>
-              <%= ff.text_field :input, class: "form-control" ,placeholder: "input" %>
-              <%= ff.text_field :output, class: "form-control" ,placeholder: "output" %>
+              <%= ff.text_field :input, class: "form-control" ,placeholder: "input (i.e. 3 2)" %>
+              <%= ff.text_field :output, class: "form-control" ,placeholder: "output (i.e. 5)" %>
             </div>
           <% end %>
 
