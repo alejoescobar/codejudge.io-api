@@ -1,5 +1,5 @@
 class Api::V1::Worker::CodeResultsController < ApplicationController
-  before_action :authenticate_as_worker!, only: [:show]
+  before_action :authenticate_as_worker!, only: [:create]
   respond_to :json
 
   def create
