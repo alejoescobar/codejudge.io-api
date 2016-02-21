@@ -128,7 +128,7 @@
         <div class="row">
           <hr>
           <div class="btn-group pull-right">
-          <%= link_to new_challenge_submit_path(@challenge) do %>
+          <%= link_to new_challenge_submit_path(@challenge), data: { no_turbolink: true } do %>
             <button class="btn btn-default btn-lg" type="button">
              Run quick test
            </button>
