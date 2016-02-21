@@ -12,7 +12,7 @@
 #
 
 class Submit < ActiveRecord::Base
-  has_many :code_results
+  has_many :code_results, dependent: :destroy
   belongs_to :challenge
 
   validates :code, :status, :challenge_id, :language, presence: true

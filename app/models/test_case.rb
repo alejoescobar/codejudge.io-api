@@ -11,6 +11,6 @@
 #
 
 class TestCase < ActiveRecord::Base
-  has_many :code_results
+  has_many :code_results, dependent: :destroy
   belongs_to :challenge
 end
