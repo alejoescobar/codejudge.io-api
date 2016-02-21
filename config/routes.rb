@@ -1,6 +1,8 @@
 require 'api_constraints'
 
 Rails.application.routes.draw do
+  get 'test_cases/destroy'
+
   # Api definition
   namespace :api, defaults: { format: :json } do
     # We are going to list our resources here
@@ -21,6 +23,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
   resources :challenges
+  resources :test_cases, only: [:destroy]
   root 'challenges#index'
 
 end
