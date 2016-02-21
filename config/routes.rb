@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       namespace :worker do
         resources :challenges, :only => [:show] do 
           resources :submits, :only => [:show] do
-            resources :code_results, :only => [:create]
+            resources :code_results, :only => [:show, :create]
           end
         end
       end
