@@ -1,6 +1,14 @@
 <% if notice or alert %>
-<div class="alert alert-danger" role="alert">
-  <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-  <%= alert %> <% if notice %>|<%= notice %> <% end %>
-</div>
+  <% if alert %>
+    <div class="alert alert-danger" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <%= alert %>
+    </div>
+  <% end %>
+  <% if notice %>
+    <div class="alert alert-success" role="alert">
+      <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+      <%= notice %>
+    </div>
+  <% end %>
 <% end %>

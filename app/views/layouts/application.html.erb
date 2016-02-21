@@ -2,7 +2,8 @@
 <html>
 <head>
   <title>CodejudgeApi</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Open+Sans:200,300' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.5/clipboard.min.js" %>
   <%= csrf_meta_tags %>
@@ -10,7 +11,10 @@
 <body>
   <%= render 'layouts/alerts' %>
   <%= render 'layouts/nav' %>
-  <%= yield %>
+  <div class="clear-nav"></div>
+  <div class="content">
+    <%= yield %>
+  </div>
   <%= render 'layouts/footer' %>
 </body>
 </html>
