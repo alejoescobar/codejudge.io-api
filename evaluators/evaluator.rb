@@ -70,7 +70,7 @@ submit["test_cases"].each_with_index do |test_case,i|
 
       req = Net::HTTP::Post.new(post_code_result_url)
       req.body = JSON.generate({
-        test_case_id: test_case_id,
+        test_case_id: test_case["id"],
         actual_output: stdout,
         evaluator_status: :ok,
         error: stderr
@@ -86,7 +86,7 @@ submit["test_cases"].each_with_index do |test_case,i|
 
       req = Net::HTTP::Post.new(post_code_result_url)
       req.body = JSON.generate({
-        test_case_id: test_case_id,
+        test_case_id: test_case["id"],
         actual_output: stdout,
         evaluator_status: :error,
         error: stderr
