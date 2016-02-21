@@ -1,7 +1,7 @@
 class CodeEvaluatorJob < ActiveJob::Base
   queue_as :default
 
-  def perform(*args)
-    # Awesome method goes here!
+  def perform(submit)
+    submit.evaluate!
   end
 end
